@@ -1,0 +1,48 @@
+<!--<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-3 blog-main">-->
+<nav>
+    <ul class="nav nav-justified masthead-nav">
+        
+        {% for item in site.data.nav_dir %}
+        {% if item.subcategories != null %}
+
+        <li class="dropdown">
+            <a href="{{ site.url }}{{ item.url }}" class="dropdown-toggle" data-target="tax" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+                  
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+              {% for subcategory in item.subcategories %}
+
+                <li><a href="{{ site.url }}/{{ subcategory.href }}/index.html"></a>{{ subcategory.subtitle }}</li>
+              
+              {% endfor %} 
+
+            </ul>
+        </li>
+
+       
+    
+              
+    </ul>
+
+      {% else %}
+
+<!--display top-level nav for items that don't have submenu-->        
+        <li>
+          <a href="{{ site.url }}{{ item.url }}">{{ item.title }}</a>
+
+      {% endif %}    
+
+        </li>
+
+      {% endfor %}
+
+    </ul>
+
+</nav>
+<!--</div>
+</div>
+
+</div>-->
+

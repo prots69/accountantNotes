@@ -1,0 +1,40 @@
+---
+layout: default
+title: Personal tax
+---
+
+<h3>Posts in category: {{ page.title }}</h3>
+
+<br/>
+
+ <div class="blog-list">
+ 
+ {% for post in site.categories.personal %}
+    
+    <div class="blog-post">
+          <h5><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }} </a></span>
+
+            <small>post in 
+            
+            {% for tag in post.tags %}
+            <a href="/tags/{{ tag }}"><span class="label label-primary">{{ tag }}</span></a>
+            {% endfor %}
+
+            </small>
+            <br/>
+          
+            <div class="post-content">
+            {{ post.excerpt | truncate:200 }}
+            </div>
+            
+    </div>  
+    
+  {% endfor %}   
+
+  </div>
+
+  
+<!--
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+-->

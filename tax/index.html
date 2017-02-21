@@ -1,0 +1,30 @@
+---
+layout: default
+title: Tax
+---
+
+  <h3>Posts in Category: {{ page.title }}</h3>
+
+  <br/>
+
+ <div class="blog-list">
+ 
+    {% for post in site.categories.tax %}
+
+    <div class="blog-post">
+          <h5><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }} by <a href="#">Mark</a></span>
+          
+            {{ post.excerpt | truncate:200 }}
+          
+            <hr>
+    </div>  
+
+    {% endfor %}   
+
+  </div>
+
+  
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+<!--Sidebar-->
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-3 blog-sidebar">
+      <div class="sidebar-module">
+        <h3>Topics</h3>
+          <ol class="list-unstyled">
+              <li><a href="/tax/">Tax</a></li>
+                
+              <li><a href="/audit/">Audit</a></li>
+              <li><a href="/account/">Account</a></li>
+              <li><a href="/fin reporting/">Financial reporting</a></li>
+              <li><a href="#">IHT</a></li>
+              <li><a href="#">Income tax</a></li>
+              <li><a href="#">Capital allowances</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+       </div><!--sidebar-module-->
+    </div><!--blog-sidebar-->
+
+
+  <div class="col-sm-8 col-sm-offset-1 blog-main">
+    
+   <nav>
+          <ul class="nav nav-justified masthead-nav">
+            <li class="dropdown">
+              <a id="dropdownMenu1" href="/tax/" class="dropdown-toggle" data-target="tax" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><h4>Tax</h4></a>
+                  
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="tax">
+                    <li><a href="/tax/companies/">Companies</a></li>
+                    <li><a href="/tax/directors/">Directors</a></li>
+                    <li><a href="#">Employees</a></li>
+                    <li><a href="#">Self-employed</a></li>
+              </ul>
+            </li>
+
+            <li><a href="/audit/"><h4>Audit</h4></a></li>
+            <li><a href="/account/"><h4>Accounting</h4></a></li>
+            <li><a href="#"><h4>Reporting</h4></a></li>
+            <li><a href="#">SME</a></li>
+            <li><a href="#">Other</a></li>
+          </ul>
+    </nav>
+
+    <ol class="breadcrumb">
+  <li><a href="/tax/">Tax</a></li>
+  <li><a href="/companies/">Companies</a></li>
+  <li class="active">Data</li>
+</ol>
+  
+   
+    <div class="wrapper">
+        {{ content }}
+      </div>
+      
+</div>  
+  
+
+<br/>
+   
+    
+  
+</div><!--row--> 
+
+{% include footer.html %}
+
+
+</div><!--container-->
+
+    
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <!--<script src="/bootstrap-4.0.0-alpha/dist/js/bootstrap.min.js"></script>-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    
+    
+
+  </body>
+
+</html>

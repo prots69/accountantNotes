@@ -1,0 +1,20 @@
+
+<article>
+
+<h3>Topic: {{ page.title }}</h3>
+
+{% for category in post.categories %}
+
+
+<div class="blog-post">
+          <h5><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }} by <a href="#">Mark</a></span>
+          
+            {{ post.excerpt | truncate:200 }}
+          
+            <hr>
+</div>  
+
+{% endfor %}
+
+</article>

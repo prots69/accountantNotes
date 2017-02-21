@@ -1,0 +1,89 @@
+---
+layout: default
+title: Tags - Articles list
+---
+
+<h4>Posts related to tag: <span class="label label-primary">{{ page.tag }}</span></h2>
+
+{% unless site.tags.[page.tag] | size > 0 %}
+  <p>No posts in this category at this time.</p>
+{% endunless %}
+
+	<div class="blog-list">
+
+  
+<!--
+<h4>Posts in tag: <a name="{{ tag[0] }}"></a><span class="badge">{{ tag[0] }}</span></h4>
+-->	
+  {% for post in site.tags.[page.tag] %}
+  	
+
+  
+  	<div class="blog-post">
+          <h3><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }} 
+            by {% if post.author %}
+                  {{ post.author }}
+              {% else %}
+                  {{ site.title }}
+              {% endif %} </span>
+          
+         
+          <div class="post-content">
+          
+            {{ post.excerpt | truncate:200 }}
+          
+          </div>
+      </div>  
+  <hr>
+  	
+
+      {% endfor %}
+
+
+  </div>
+
+<!--
+-
+layout: page
+-
+<h2>Posts related to: {{ page.tag }}</h2>
+
+{% unless page.content == '' %}
+  <p>{{ page.content }}</p>
+{% endunless %}
+
+{% unless site.tags.[page.tag] | size > 0 %}
+  <p>No posts in this category at this time.</p>
+{% endunless %}
+
+{% for post in site.tags.[page.tag] %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">            
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">
+      Posted by 
+      {% if post.author %}
+        {{ post.author }}
+      {% else %}
+        {{ site.title }}
+      {% endif %} 
+      on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
+    
+  -->
+
+  
+
+

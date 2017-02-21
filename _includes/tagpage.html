@@ -1,0 +1,34 @@
+---
+layout: default
+title: Tag page
+---
+
+<h3>Articles in <b>tag</b>: {{ page.tag }}</h3>
+
+<br/>
+
+ <div class="blog-list">
+ 
+ {% for post in site.tags[page.tag] %}
+    
+  <div class="blog-post">
+          <h5><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }} </a></span>
+
+            
+            <br/>
+          
+            <div class="post-content">
+            {{ post.excerpt | truncate:200 }}
+            </div>
+            
+    </div>  
+    
+  {% endfor %}   
+
+  </div> <!-- blog-list -->
+
+  
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+

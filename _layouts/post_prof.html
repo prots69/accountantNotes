@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+
+  {% include breadcrumbs.html path=page.path title=page.title %}
+  
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">{{ page.title }}</h2>
+            <span class="blog-post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</span> 
+
+            <small>post in 
+            
+            {% for tag in page.tags %}
+            
+            <a href="/tags/{{ tag }}/"><span class="label label-primary">{{ tag }}</span></a>
+            <!--<a href="/tags.html/#{{ tag }}"><span class="label label-primary">{{ tag }}</span></a>-->
+            
+            
+            {% endfor %}
+
+            </small>
+
+        <article class="post-content">
+    		{{ content }}
+  			</article>
+            
+          </div><!-- /.blog-post -->
+
+          
+    
+<!--
+     Bootstrap core JavaScript
+    ================================================== --
+    -- Placed at the end of the document so the pages load faster --
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    -- IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+-->  

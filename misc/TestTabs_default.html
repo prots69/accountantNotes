@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+<!--Sidebar-->
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-3 blog-sidebar">
+      <div class="sidebar-module">
+        <h3>Topics</h3>
+          <ol class="list-unstyled">
+              <li><a href="/audit/">Audit</a></li>
+              <li><a href="/tax/">Tax</a></li>
+              <li><a href="/misc/">Misc</a></li>
+              <li><a href="#">Employer taxes</a></li>
+              <li><a href="#">IHT</a></li>
+              <li><a href="#">Income tax</a></li>
+              <li><a href="#">Capital allowances</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+       </div><!--sidebar-module-->
+    </div><!--blog-sidebar-->
+
+  <div class="col-sm-8 col-sm-offset-1 blog-main">
+  <ul id="myTabs" class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active">
+    <a href="#tax" role="tab" data-toggle="tab" aria-controls="tax" aria-expanded="true"><h4>Tax</h4></a>
+  </li>
+  <li role="presentation">
+    <a href="#account" role="tab" data-toggle="tab" aria-controls="account"><h4>Accounting</h4></a>
+  </li>
+  <li role="presentation">
+    <a href="#fr" role="tab" data-toggle="tab" aria-controls="fr"><h4>Financial reporting</h4></a>
+  </li>
+  <li class="presentation">
+    <a href="#audit" role="tab" data-toggle="tab" aria-controls="audit"><h4>Auditing</h4></a>
+  </li>
+</ul>
+
+<br>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="tax"><div class="wrapper">
+    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p></div></div>
+  <div role="tabpanel" class="tab-pane" id="account">
+    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+    </div>
+  <div role="tabpanel" class="tab-pane" id="fr"></div>
+  <div role="tabpanel" class="tab-pane" id="audit"> {{ content }} </div>
+</div>
+
+  
+
+<br/>
+
+     <!--
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    -->
+  
+</div><!--row--> 
+</div><!--container-->
+
+    
+    {% include footer.html %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <!--<script src="/bootstrap-4.0.0-alpha/dist/js/bootstrap.min.js"></script>-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script type="text/javascript">
+    $('#myTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    })
+
+    </script>
+    
+
+  </body>
+
+</html>

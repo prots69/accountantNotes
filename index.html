@@ -1,0 +1,25 @@
+---
+layout: default
+title: All posts
+---
+
+<article>
+
+<h3>All posts</h3>
+
+{% for post in site.posts %}
+
+
+<div class="blog-post">
+          <h5><a class="blog-post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+          <span class="blog-post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          
+            {{ post.excerpt | truncate:200 }}
+          
+            <hr>
+</div>  
+
+{% endfor %}
+
+</article>
+   

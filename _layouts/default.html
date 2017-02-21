@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      {% include head.html %}
+
+<body>
+
+      {% include header.html %}
+
+<!--Main content: on the left - sidebar, on the right: nav + postcontent-->
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-sm-8 blog-main">
+
+    
+
+      <nav>
+        <ul class="nav nav-justified masthead-nav">
+          <li class="dropdown">
+            <a href="{{ site.baseurl }}/tax/index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UK TAX </a>
+              
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                  <li><a href="{{ site.baseurl }}/tax/business/index.html">business</a></li>
+                  <li><a href="{{ site.baseurl }}/tax/personal/index.html">personal</a></li>
+                  <li><a href="{{ site.baseurl }}/tax/capital/index.html">capital</a></li>
+
+              </ul>
+          </li>
+        
+          <li class="dropdown">
+            <a href="{{ site.baseurl }}/accounting/index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CORPORATE REPORTING</a>
+              
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                  <li><a href="{{ site.baseurl }}/accounting/overview/index.html">overview</a></li>
+                  <li><a href="{{ site.baseurl }}/accounting/ifrs/index.html">IFRS</a></li>
+                  <li><a href="{{ site.baseurl }}/accounting/frs_102/index.html">FRS 102</a></li>
+                  
+              </ul>
+          </li>
+        
+          <li class="dropdown">
+            <a href="{{ site.baseurl }}/audit/index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AUDIT</a>
+              
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                  <li><a href="{{ site.baseurl }}/audit/basics/index.html">basics</a></li>
+                                
+              </ul>
+          </li>
+            
+        </ul>
+      </nav>
+<br/>  
+
+<!--Alternative nav: in _data - subcat defined with url/ headings-
+      <nav>
+        <ul class="nav nav-justified masthead-nav">
+        
+        {% for item in site.data.nav_dir %}
+       
+        {% if item.subcategories != null %}
+
+        <li class="dropdown">
+            <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+              
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+              {% for subcategory in item.subcategories %}
+              
+              <li><a href="{{ subcategory.href }}">{{ subcategory.subtitle }}</a></li>
+                   
+              {% endfor %}
+            </ul>
+        </li>
+        
+        {% else %}
+       
+       --display top-level nav for items that don't have submenu--        
+        
+        <li>
+          <a href="{{ item.url }}">{{ item.title }}</a></li>
+  
+        </ul>
+
+        {% endif %}    
+
+        {% endfor %}
+    
+      </nav>
+-->
+
+
+     
+          {{ content }}
+    
+    
+    </div>  <!--blog main -->
+  
+
+   
+   <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+
+              
+          <div class="sidebar-module">
+            <h3>Tags</h3>
+
+          {% capture tags %}
+              {% for tag in site.tags %}
+              {{ tag[0] }}
+              {% endfor %}
+              {% endcapture %}
+
+              {% assign sortedtags = tags | split:' ' | sort %}
+              {% for tag in sortedtags %}
+
+          
+          <a href="/tags/{{ tag }}/"><span class="label label-primary">{{ tag }}</span></a>
+          {% endfor %}
+
+
+          <!--  
+            {% for tag in site.tags %}
+            <a name="{{ tag[0] }}" href="/tags_list.html"><span class="label label-primary">{{ tag[0] }}</span></a>
+            {% endfor %}
+          -->
+          </div>
+    
+
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+
+    </div> <!--blog sidebar -->
+    
+  </div><!--row--> 
+
+  {% include footer.html %}
+
+</div><!--container-->
+
+    
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+    <!--<script src="/bootstrap-4.0.0-alpha/dist/js/bootstrap.min.js"></script>-->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    
+    
+
+</body>
+
+</html>
